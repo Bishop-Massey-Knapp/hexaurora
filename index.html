@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEXAURORA - Structure Illuminated</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"> -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span class="brand-text">HEXAURORA</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-info">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-5 mt-4">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container-fluid">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <!-- Responsive Image -->
+                        <div class="text-center">
+                            <img src="assets/icon.png" alt="HEXAURORA Design" class="img-fluid main-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-content p-5">
+                            <h1 class="display-4 fw-bold mb-3">HEXAURORA</h1>
+                            <p class="lead mb-4 tagline">Structure Illuminated</p>
+                            <p class="mb-4">Experience the perfect blend of structure and illumination with our innovative design solutions.</p>
+                            
+                            <!-- Navigation Buttons -->
+                            <div class="button-group mb-4">
+                                <!-- Get Started button - visible on all screen sizes -->
+                                <a href="#contact" class="btn btn-primary me-3 mb-2">Get Started</a>
+                                <!-- Learn More button - hidden on small screens -->
+                                <a href="#about" class="btn btn-secondary d-none d-md-inline-block mb-2">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form Section -->
+        <section id="contact" class="form-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="form-container p-5 rounded-4">
+                            <h2 class="text-center mb-4">Join HEXAURORA</h2>
+                            <p class="text-center mb-4">Register to unlock the power of structured illumination</p>
+                            
+                            <form id="registrationForm" class="needs-validation" novalidate>
+                                <!-- First Name and Last Name Side by Side -->
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid first name.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid last name.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email address.
+                                    </div>
+                                </div>
+                                
+                                <!-- Password -->
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" required minlength="8">
+                                    <div class="invalid-feedback">
+                                        Password must be at least 8 characters long.
+                                    </div>
+                                </div>
+                                
+                                <!-- Terms and Conditions Checkbox -->
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        I agree to the <a href="#" class="text-decoration-none">Terms and Conditions</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree to the terms and conditions.
+                                    </div>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success btn-lg px-5">Register Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learn More Modal -->
+        <div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content custom-modal">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" id="learnMoreModalLabel">About HEXAURORA</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img src="assets/hexaurora_dark.png" alt="HEXAURORA" class="img-fluid mb-3">
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="mb-3">Structure Illuminated</h4>
+                                <p class="mb-3">HEXAURORA represents the perfect fusion of architectural precision and luminous innovation. Our platform transforms complex data structures into beautiful, intuitive visualizations.</p>
+                                
+                                <h6 class="mb-2">Key Features:</h6>
+                                <ul class="feature-list">
+                                    <li>Advanced Data Visualization</li>
+                                    <li>Responsive Design Framework</li>
+                                    <li>Real-time Collaboration</li>
+                                    <li>Seamless Integration</li>
+                                    <li>Modern UI Components</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn custom-btn-primary" data-bs-dismiss="modal" onclick="scrollToForm()">Join Now</button>
+                        <button type="button" class="btn custom-btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="about-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="about-content text-center">
+                            <h2 class="display-5 fw-bold mb-4">About Hexaurora</h2>
+                            
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 mb-4 mb-lg-0">
+                                    <img src="assets/hexaurora_light.png" alt="HEXAURORA About" class="img-fluid about-image">
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="about-text text-start">
+                                        <p class="lead mb-4">Hexaurora was born from frustration — long hours spent wrestling with clunky, manual forms that broke focus, wasted time, and dulled human potential. What began as one developer's late-night attempt to streamline data entry evolved into a project illuminating how structure and design could work together, not against each other.</p>
+                                        
+                                        <p class="mb-4">Built on Bootstrap and powered by precision, Hexaurora reimagines the humble form as something fluid, responsive, and alive — where every field guides, every button responds, and every interaction flows. It's proof that even the simplest tools, when designed with intention, can transform monotony into momentum.</p>
+                                        
+                                        <div class="text-center mt-4">
+                                            <button class="btn custom-btn-primary" onclick="scrollToForm()">Join Our Mission</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Members Table Section -->
+        <section id="community" class="table-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Community Members</h2>
+                
+                <!-- Responsive Table -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover custom-table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Join Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Alex</td>
+                                <td>Johnson</td>
+                                <td>alex.johnson@hexaurora.com</td>
+                                <td>2024-01-15</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Sarah</td>
+                                <td>Chen</td>
+                                <td>sarah.chen@hexaurora.com</td>
+                                <td>2024-02-03</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Michael</td>
+                                <td>Rodriguez</td>
+                                <td>michael.rodriguez@hexaurora.com</td>
+                                <td>2024-02-18</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Emily</td>
+                                <td>Davis</td>
+                                <td>emily.davis@hexaurora.com</td>
+                                <td>2024-03-05</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>David</td>
+                                <td>Thompson</td>
+                                <td>david.thompson@hexaurora.com</td>
+                                <td>2024-03-12</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Jessica</td>
+                                <td>Martinez</td>
+                                <td>jessica.martinez@hexaurora.com</td>
+                                <td>2024-03-20</td>
+                                <td><span class="badge bg-info">New</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact-info" class="contact-info-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="contact-info-content text-center">
+                            <h2 class="display-5 fw-bold mb-4">Contact Us</h2>
+                            
+                            <!-- Contact Image at Top -->
+                            <div class="text-center mb-5">
+                                <img src="assets/contact.png" alt="Contact HEXAURORA" class="rounded-circle contact-image">
+                            </div>
+                            
+                            <div class="row align-items-center">
+                                <div class="col-lg-8 mx-auto">
+                                    <div class="contact-details text-center">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="contact-item mb-4">
+                                                    <h5 class="contact-label">Email</h5>
+                                                    <a href="mailto:contact@hexaurora.space" class="contact-value">contact@hexaurora.space</a>
+                                                </div>
+                                                
+                                                <div class="contact-item mb-4">
+                                                    <h5 class="contact-label">Website</h5>
+                                                    <a href="https://www.hexaurora.space" class="contact-value" target="_blank">www.hexaurora.space</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="contact-item mb-4">
+                                                    <h5 class="contact-label">Mission Control (HQ)</h5>
+                                                    <p class="contact-value">88 Nebula Circuit<br>Aurora Station, Borealis Cluster</p>
+                                                </div>
+                                                
+                                                <div class="contact-item mb-4">
+                                                    <h5 class="contact-label">Comms Line</h5>
+                                                    <a href="tel:+17775550429" class="contact-value">+1 (777) 555–0429</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="text-center mt-4">
+                                            <a href="mailto:contact@hexaurora.space?subject=Contact%20from%20HEXAURORA%20Website&body=Hello%20HEXAURORA%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20regarding:%0D%0A%0D%0A" class="btn custom-btn-primary">Send an email</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="custom-footer py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 HEXAURORA. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Structure Illuminated</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Form validation
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            event.preventDefault();
+                            alert('Registration successful! Welcome to HEXAURORA.');
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        // Universal smooth scrolling for all anchor links
+        document.addEventListener('click', function(e) {
+            // Check if clicked element is an anchor with hash
+            if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="#"]')) {
+                const link = e.target.matches('a[href^="#"]') ? e.target : e.target.closest('a[href^="#"]');
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+
+        // Function to scroll to form (used in modal)
+        function scrollToForm() {
+            document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Add ripple effect to all custom buttons
+        document.querySelectorAll('.custom-btn-primary, .custom-btn-secondary, .hexaurora-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>
