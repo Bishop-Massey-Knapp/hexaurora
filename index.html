@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="styles.css">
     
     <!-- Favicon -->
-    <!-- <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"> -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/icon.png" alt="HEXAURORA Logo" height="40" class="me-2">
                 <span class="brand-text">HEXAURORA</span>
             </a>
             
@@ -62,14 +63,6 @@
                             <h1 class="display-4 fw-bold mb-3">HEXAURORA</h1>
                             <p class="lead mb-4 tagline">Structure Illuminated</p>
                             <p class="mb-4">Experience the perfect blend of structure and illumination with our innovative design solutions.</p>
-                            
-                            <!-- Navigation Buttons -->
-                            <div class="button-group mb-4">
-                                <!-- Get Started button - visible on all screen sizes -->
-                                <a href="#contact" class="btn btn-primary me-3 mb-2">Get Started</a>
-                                <!-- Learn More button - hidden on small screens -->
-                                <a href="#about" class="btn btn-secondary d-none d-md-inline-block mb-2">Learn More</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +128,7 @@
                                 
                                 <!-- Submit Button -->
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success btn-lg px-5">Register Now</button>
+                                    <button type="submit" class="custom-btn-primary btn-lg px-5">Register Now</button>
                                 </div>
                             </form>
                         </div>
@@ -173,8 +166,8 @@
                         </div>
                     </div>
                     <div class="modal-footer border-0">
-                        <button type="button" class="btn custom-btn-primary" data-bs-dismiss="modal" onclick="scrollToForm()">Join Now</button>
-                        <button type="button" class="btn custom-btn-primary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="custom-btn-primary" data-bs-dismiss="modal" onclick="scrollToForm()">Join Now</button>
+                        <button type="button" class="custom-btn-primary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -199,7 +192,7 @@
                                         <p class="mb-4">Built on Bootstrap and powered by precision, Hexaurora reimagines the humble form as something fluid, responsive, and alive — where every field guides, every button responds, and every interaction flows. It's proof that even the simplest tools, when designed with intention, can transform monotony into momentum.</p>
                                         
                                         <div class="text-center mt-4">
-                                            <button class="btn custom-btn-primary" onclick="scrollToForm()">Join Our Mission</button>
+                                            <button class="custom-btn-primary" onclick="scrollToForm()">Join Our Mission</button>
                                         </div>
                                     </div>
                                 </div>
@@ -325,7 +318,7 @@
                                         </div>
                                         
                                         <div class="text-center mt-4">
-                                            <a href="mailto:contact@hexaurora.space?subject=Contact%20from%20HEXAURORA%20Website&body=Hello%20HEXAURORA%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20regarding:%0D%0A%0D%0A" class="btn custom-btn-primary">Send an email</a>
+                                            <a href="mailto:contact@hexaurora.space?subject=Contact%20from%20HEXAURORA%20Website&body=Hello%20HEXAURORA%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20regarding:%0D%0A%0D%0A" class="custom-btn-primary">Send an email</a>
                                         </div>
                                     </div>
                                 </div>
@@ -377,21 +370,39 @@
         })();
 
         // Universal smooth scrolling for all anchor links
-        document.addEventListener('click', function(e) {
-            // Check if clicked element is an anchor with hash
-            if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="#"]')) {
-                const link = e.target.matches('a[href^="#"]') ? e.target : e.target.closest('a[href^="#"]');
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to all anchor links with hash
+            document.addEventListener('click', function(e) {
+                let link = null;
                 
-                if (targetElement) {
-                    e.preventDefault();
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                // Check if clicked element or its parent is an anchor with hash
+                if (e.target.matches('a[href^="#"]')) {
+                    link = e.target;
+                } else if (e.target.closest('a[href^="#"]')) {
+                    link = e.target.closest('a[href^="#"]');
                 }
-            }
+                
+                if (link) {
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    console.log('Clicked link:', link, 'Target:', targetId, 'Element found:', targetElement);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Add offset for fixed navbar
+                        const navHeight = 70;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
         });
 
         // Function to scroll to form (used in modal)

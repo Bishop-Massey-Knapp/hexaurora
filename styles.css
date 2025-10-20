@@ -152,37 +152,58 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff !important;
 }
 
-/* Custom Buttons */
-.custom-btn-primary {
-    background: var(--primary-gradient);
-    border: none;
+/* Custom Buttons - ENHANCED SPECIFICITY */
+.custom-btn-primary,
+a.custom-btn-primary,
+button.custom-btn-primary,
+[class*="custom-btn-primary"] {
+    background: linear-gradient(135deg, #13ffff 0%, #3BA3FF 50%, #5700FA 100%) !important;
+    border: none !important;
     color: #ffffff !important;
-    font-weight: 600;
-    padding: 12px 30px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    position: relative;
-    overflow: hidden;
+    font-weight: 600 !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.9rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
 }
 
-.custom-btn-primary:hover {
-    background: var(--primary-hover-gradient);
+.custom-btn-primary:hover,
+a.custom-btn-primary:hover,
+button.custom-btn-primary:hover,
+[class*="custom-btn-primary"]:hover {
+    background: linear-gradient(135deg, #BAFFD7 0%, #00FFBB 50%, #00E880 100%) !important;
     color: #004164 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(186, 255, 215, 0.3);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(186, 255, 215, 0.3) !important;
+    text-decoration: none !important;
 }
 
-.custom-btn-primary:focus {
-    background: var(--primary-hover-gradient);
+.custom-btn-primary:focus,
+a.custom-btn-primary:focus,
+button.custom-btn-primary:focus,
+[class*="custom-btn-primary"]:focus {
+    background: linear-gradient(135deg, #BAFFD7 0%, #00FFBB 50%, #00E880 100%) !important;
     color: #004164 !important;
-    box-shadow: 0 0 0 0.2rem rgba(186, 255, 215, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(186, 255, 215, 0.5) !important;
+    text-decoration: none !important;
 }
 
-.custom-btn-primary:active {
-    transform: translateY(0) scale(0.98);
+.custom-btn-primary:active,
+a.custom-btn-primary:active,
+button.custom-btn-primary:active,
+[class*="custom-btn-primary"]:active {
+    transform: translateY(0) scale(0.98) !important;
+    background: linear-gradient(135deg, #BAFFD7 0%, #00FFBB 50%, #00E880 100%) !important;
+    color: #004164 !important;
+    text-decoration: none !important;
 }
 
 /* Remove secondary button styles since we're using primary for all */
@@ -296,6 +317,82 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* All buttons now use custom-btn-primary styling */
+.btn.custom-btn-primary,
+a.btn.custom-btn-primary,
+button.btn.custom-btn-primary,
+.btn-primary,
+.btn-secondary, 
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger,
+.btn-light,
+.btn-dark {
+    background: var(--primary-gradient) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none !important;
+}
+
+.btn.custom-btn-primary:hover,
+a.btn.custom-btn-primary:hover,
+button.btn.custom-btn-primary:hover,
+.btn-primary:hover,
+.btn-secondary:hover, 
+.btn-success:hover,
+.btn-info:hover,
+.btn-warning:hover,
+.btn-danger:hover,
+.btn-light:hover,
+.btn-dark:hover {
+    background: var(--primary-hover-gradient) !important;
+    color: #004164 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(186, 255, 215, 0.3) !important;
+    text-decoration: none !important;
+}
+
+.btn.custom-btn-primary:focus,
+a.btn.custom-btn-primary:focus,
+button.btn.custom-btn-primary:focus,
+.btn-primary:focus,
+.btn-secondary:focus, 
+.btn-success:focus,
+.btn-info:focus,
+.btn-warning:focus,
+.btn-danger:focus,
+.btn-light:focus,
+.btn-dark:focus {
+    background: var(--primary-hover-gradient) !important;
+    color: #004164 !important;
+    box-shadow: 0 0 0 0.2rem rgba(186, 255, 215, 0.5) !important;
+    text-decoration: none !important;
+}
+
+.btn.custom-btn-primary:active,
+a.btn.custom-btn-primary:active,
+button.btn.custom-btn-primary:active,
+.btn-primary:active,
+.btn-secondary:active, 
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active,
+.btn-light:active,
+.btn-dark:active {
+    transform: translateY(0) scale(0.98) !important;
+    background: var(--primary-hover-gradient) !important;
+    text-decoration: none !important;
+}
 
 /* Table Section */
 .table-section {
@@ -688,4 +785,91 @@ h1, h2, h3, h4, h5, h6 {
 .custom-btn-primary:active,
 .custom-btn-secondary:active {
     transform: translateY(0) scale(0.98);
+}
+
+/* FINAL OVERRIDE - Maximum specificity for hero buttons */
+body main section .hero-content .button-group a.custom-btn-primary,
+body main section .hero-content .button-group a.custom-btn-primary:link,
+body main section .hero-content .button-group a.custom-btn-primary:visited,
+.hero-content .button-group .custom-btn-primary,
+a.custom-btn-primary {
+    background: linear-gradient(135deg, #13ffff 0%, #3BA3FF 50%, #5700FA 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.9rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+}
+
+body main section .hero-content .button-group a.custom-btn-primary:hover,
+body main section .hero-content .button-group a.custom-btn-primary:focus,
+.hero-content .button-group .custom-btn-primary:hover,
+.hero-content .button-group .custom-btn-primary:focus,
+a.custom-btn-primary:hover,
+a.custom-btn-primary:focus {
+    background: linear-gradient(135deg, #BAFFD7 0%, #00FFBB 50%, #00E880 100%) !important;
+    color: #004164 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(186, 255, 215, 0.3) !important;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+body main section .hero-content .button-group a.custom-btn-primary:active,
+.hero-content .button-group .custom-btn-primary:active,
+a.custom-btn-primary:active {
+    transform: translateY(0) scale(0.98) !important;
+    background: linear-gradient(135deg, #BAFFD7 0%, #00FFBB 50%, #00E880 100%) !important;
+    color: #004164 !important;
+    text-decoration: none !important;
+}
+
+/* ULTIMATE OVERRIDE - This will definitely work */
+html body main section div.hero-content div.button-group a[class*="custom-btn-primary"],
+html body div a[class*="custom-btn-primary"],
+html a[class*="custom-btn-primary"] {
+    background: linear-gradient(135deg, #13ffff 0%, #3BA3FF 50%, #5700FA 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.9rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+}
+
+html body main section div.hero-content div.button-group a[class*="custom-btn-primary"]:hover,
+html body div a[class*="custom-btn-primary"]:hover,
+html a[class*="custom-btn-primary"]:hover {
+    background: linear-gradient(135deg, #BAFFD7 0%, #00FFBB 50%, #00E880 100%) !important;
+    color: #004164 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(186, 255, 215, 0.3) !important;
+    text-decoration: none !important;
+}
+
+html body main section div.hero-content div.button-group a[class*="custom-btn-primary"]:active,
+html body div a[class*="custom-btn-primary"]:active,
+html a[class*="custom-btn-primary"]:active {
+    transform: translateY(0) scale(0.98) !important;
+    background: linear-gradient(135deg, #BAFFD7 0%, #00FFBB 50%, #00E880 100%) !important;
+    color: #004164 !important;
 }
